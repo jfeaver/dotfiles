@@ -130,6 +130,9 @@ set nu!  " Line numbers on
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set t_Co=256
 
+" Powerline
+set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+
 " Formatting
 set ts=2
 set copyindent
