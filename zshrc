@@ -1,5 +1,5 @@
 
-### ZSHRC
+### OH-MY-ZSHRC
 if [ -f ~/.dotfiles/omzshrc ]; then
       . ~/.dotfiles/omzshrc
 fi
@@ -33,4 +33,14 @@ local branch='$(parse_git_branch)'
 
 PS1="%{$fg[green]%}${branch}%{$reset_color%}`whoami`:%{$fg[blue]%}%~%{$reset_color%}$ "
 setopt promptsubst
+
+### VIM-LIKE ZSH
+export EDITOR="vim"
+bindkey -v
+
+# vi style incremental search
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
 
