@@ -19,3 +19,37 @@ function clean_temp {
   find ~/temp -type d -empty -exec rmdir {} \;
 }
 
+### TMUX
+
+# New Session
+function tmn {
+  if [ $1 ]; then
+    tmux new -s $1
+  else
+    echo "expected session_name argument"
+  fi
+}
+
+# Attach Session
+function tma {
+  if [ $1 ]; then
+    tmux attach -t $1
+  else
+    echo "expected session_name argument"
+  fi
+}
+
+# Switch Session
+function tms {
+  if [ $1 ]; then
+    tmux switch -t $1
+  else
+    echo "expected session_name argument"
+  fi
+}
+
+# List Sessions
+function tms {
+  tmux list-sessions
+}
+
