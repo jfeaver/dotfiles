@@ -1,0 +1,21 @@
+alias addvh="sudo vi /etc/hosts; sudo vi /etc/apache2/extra/httpd-vhosts.conf;"
+alias rm~="find . -name '*~' -exec rm {} \;"
+
+alias ssh-ayn-prod="ssh nathan@cl-web5812.carbonlogic.com"
+alias ssh-ayn-dev="ssh nathan@cl-web5811.carbonlogic.com"
+
+alias pgstart="su postgres -c '/usr/local/pgsql/bin/postgres -D /usr/local/pgsql/data >/usr/local/pgsql/data/logfile 2>&1 &'"
+
+function fileserver {
+  if [ $1 ]; then
+    python -mSimpleHTTPServer $1
+  else
+    python -mSimpleHTTPServer 3000
+  fi
+}
+
+function clean_temp {
+  find ~/temp -mtime +40 -type f -exec rm {} \;
+  find ~/temp -type d -empty -exec rmdir {} \;
+}
+
