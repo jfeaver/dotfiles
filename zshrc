@@ -1,4 +1,9 @@
 
+### ZSHRC
+if [ -f ~/.dotfiles/omzshrc ]; then
+      . ~/.dotfiles/omzshrc
+fi
+
 ### RVM
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -28,9 +33,4 @@ local branch='$(parse_git_branch)'
 
 PS1="%{$fg[green]%}${branch}%{$reset_color%}`whoami`:%{$fg[blue]%}%~%{$reset_color%}$ "
 setopt promptsubst
-
-### ZSHRC
-if [ -f ~/.dotfiles/omzshrc ]; then
-      . ~/.dotfiles/omzshrc
-fi
 
