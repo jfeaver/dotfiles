@@ -19,7 +19,9 @@ function parse_git_branch {
 }
 
 autoload -U colors && colors
-PS1="%{$fg[green]%}`parse_git_branch`%{$reset_color%}`whoami`:%{$fg[blue]%}%~%{$reset_color%}$ "
+local branch='$(parse_git_branch)'
+PS1="%{$fg[green]%}${branch}%{$reset_color%}`whoami`:%{$fg[blue]%}%~%{$reset_color%}$ "
+setopt promptsubst
 
 autoload -U promptinit
 promptinit
