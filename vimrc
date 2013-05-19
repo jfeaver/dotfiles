@@ -126,7 +126,7 @@ syntax enable
 set cf  " Enable error files & error jumping.
 set autowrite  " Writes on make/shell commands
 set nu!  " Line numbers on
-"set nowrap  " Line wrapping off
+set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set t_Co=256
 
