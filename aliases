@@ -49,7 +49,7 @@ function tms {
 }
 
 # List Sessions
-function tms {
+function tml {
   tmux list-sessions
 }
 
