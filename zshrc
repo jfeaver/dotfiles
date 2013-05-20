@@ -13,6 +13,10 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Add git uprades to PATH
 export PATH=/usr/local/git/bin:/usr/local/sbin:$PATH
 
+### NPM
+# Add npm packages to the path
+export PATH=$PATH:/usr/local/share/npm/bin
+
 ### HEROKU TOOLBELT
 export PATH="/usr/local/heroku/bin:$PATH"
 
