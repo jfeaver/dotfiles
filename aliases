@@ -5,6 +5,7 @@ alias ssh-ayn-prod="ssh nathan@cl-web5812.carbonlogic.com"
 alias ssh-ayn-dev="ssh nathan@cl-web5811.carbonlogic.com"
 
 alias pgstart="su postgres -c '/usr/local/pgsql/bin/postgres -D /usr/local/pgsql/data >/usr/local/pgsql/data/logfile 2>&1 &'"
+alias pgstop="su postgres -c '/usr/local/pgsql/bin/postgres -D /usr/local/pgsql/data stop'"
 
 function fileserver {
   if [ $1 ]; then
@@ -18,6 +19,13 @@ function clean_temp {
   find ~/temp -mtime +40 -type f -exec rm {} \;
   find ~/temp -type d -empty -exec rmdir {} \;
 }
+
+function s3_deploy {
+  rm~
+  nanoc prune --yes
+  s3cmd sync ./output/ s3://www.nathanfeaver.com
+}
+
 
 ### TMUX
 
