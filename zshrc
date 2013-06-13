@@ -1,3 +1,5 @@
+### HOMEBREW
+export PATH=/usr/local/bin:$PATH
 
 ### OH-MY-ZSHRC
 if [ -f ~/.dotfiles/omzshrc ]; then

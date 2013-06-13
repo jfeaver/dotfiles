@@ -113,6 +113,7 @@ endif
 au! BufRead,BufNewFile *.haml setfiletype haml
 au BufNewFile,BufRead *.spec setfiletype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead *.md set filetype=markdown
 
 " alt+n or alt+p to navigate between entries in QuickFix
 map <silent> <m-p> :cp <cr>
@@ -157,4 +158,10 @@ set laststatus=2  " Always show status line.
 
 " Remove trailing whitespace on save
 autocmd BufWritePre *.* :%s/\s\+$//e
+
+" Yank text to the OS X clipboard
+set clipboard=unnamed
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
