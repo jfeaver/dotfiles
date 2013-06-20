@@ -152,9 +152,11 @@ set expandtab
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
 set list
-" Show $ at end of line and trailing space as ~
+" Show trailing space as ~
 set lcs=tab:\ \ ,trail:~,extends:>,precedes:<
 set laststatus=2  " Always show status line.
+" Highlight colors so that they don't obfuscate text
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
 
 " Remove trailing whitespace on save
 autocmd BufWritePre *.* :%s/\s\+$//e
