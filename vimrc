@@ -1,5 +1,8 @@
 " System vimrc located in:
 " /usr/share/vim/vimrc
+"
+" Filetype defaults set in:
+" /usr/share/vim/vim73/filetype.vim
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup
@@ -10,7 +13,7 @@ au BufWrite /private/etc/pw.* set nowritebackup
 
 " Manage my runtimepath with pathogen.vim to add plugins like vim-LESS syntax
 " hightlighting.
-"call pathogen#infect()
+execute pathogen#infect()
 
 " An example for a vimrc file.
 "
@@ -137,14 +140,12 @@ set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
 " Formatting
 set ts=2
 set copyindent
-" set bs=2  " Backspace over everything in insert mode
 set shiftwidth=2  " Tabs under smart indent
 set nocp incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
 set cindent
-" set autoindent
 set smarttab
 set expandtab
 
@@ -153,7 +154,7 @@ set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
 set list
 " Show trailing space as ~
-set lcs=tab:\ \ ,trail:~,extends:>,precedes:<
+set lcs=tab:..,trail:~,extends:>,precedes:<
 set laststatus=2  " Always show status line.
 " Highlight colors so that they don't obfuscate text
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
@@ -166,4 +167,8 @@ set clipboard=unnamed
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" Newlines without entering insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
 

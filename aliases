@@ -1,11 +1,15 @@
 alias addvh="sudo vi /etc/hosts; sudo vi /etc/apache2/extra/httpd-vhosts.conf;"
-alias rm~="find . -name '*~' -exec rm {} \;"
+function rm~ {
+  find . -name '*~' -exec rm {} \;
+  find . -name '*.orig' -exec rm {} \;
+  find . -name 'dump.rdb' -exec rm {} \;
+}
 
 alias ssh-ayn-prod="ssh nathan@cl-web5812.carbonlogic.com"
 alias ssh-ayn-dev="ssh nathan@cl-web5811.carbonlogic.com"
 
-alias pgstart="su postgres -c '/usr/local/pgsql/bin/postgres -D /usr/local/pgsql/data >/usr/local/pgsql/data/logfile 2>&1 &'"
-alias pgstop="su postgres -c '/usr/local/pgsql/bin/postgres -D /usr/local/pgsql/data stop'"
+alias pgstart="su postgres -c 'source ~/.bashrc && pg_ctl start'"
+alias pgstop="su postgres -c 'source ~/.bashrc && pg_ctl stop'"
 
 function fileserver {
   if [ $1 ]; then
