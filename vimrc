@@ -172,3 +172,8 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
+" Source project specific vim configs
+if filereadable(".vimrc.custom")
+  so .vimrc.custom
+endif
+
