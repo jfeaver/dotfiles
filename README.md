@@ -3,6 +3,11 @@ Dotfiles
 
 A collection of my config files for ZSH, Oh-My-Zsh, Vim, Tmux, and Powerline.
 
+Dependencies
+============
+
+ZSH, Oh-My-Zsh, Vim, Pathogen, Tmux, Powerline
+
 Setup
 =====
 
