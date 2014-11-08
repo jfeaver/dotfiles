@@ -2,9 +2,26 @@
 export PATH=/usr/local/bin:$PATH
 
 ### OH-MY-ZSHRC
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
 if [ -f ~/.dotfiles/omzshrc ]; then
       . ~/.dotfiles/omzshrc
 fi
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+source $ZSH/oh-my-zsh.sh
 
 ### RVM
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
