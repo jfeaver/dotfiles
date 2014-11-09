@@ -66,3 +66,5 @@ bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
 
+# Auto change directory (don't need to type `cd`)
+setopt AUTO_CD
