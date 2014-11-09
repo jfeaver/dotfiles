@@ -13,7 +13,7 @@ au BufWrite /private/etc/pw.* set nowritebackup
 
 " Manage my runtimepath with pathogen.vim to add plugins like vim-LESS syntax
 " hightlighting.
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " An example for a vimrc file.
 "
@@ -136,7 +136,7 @@ set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set t_Co=256
 
 " Powerline
-set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 " Formatting
 set ts=2

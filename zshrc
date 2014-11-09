@@ -5,8 +5,8 @@ export PATH=/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-if [ -f ~/.dotfiles/omzshrc ]; then
-      . ~/.dotfiles/omzshrc
+if [ -f ~/dotfiles/omzshrc ]; then
+      . ~/dotfiles/omzshrc
 fi
 
 # Set name of the theme to load.
@@ -36,12 +36,18 @@ export PATH=/usr/local/git/bin:/usr/local/sbin:$PATH
 # Add npm packages to the path
 export PATH=$PATH:/usr/local/share/npm/bin
 
+### Powerline
+# Make sure powerline is found
+if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+    PATH="$HOME/Library/Python/2.7/bin:$PATH"
+fi
+
 ### HEROKU TOOLBELT
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### ALIASES
-if [ -f ~/.dotfiles/aliases ]; then
-      . ~/.dotfiles/aliases
+if [ -f ~/dotfiles/aliases ]; then
+      . ~/dotfiles/aliases
 fi
 
 ### PROMPT
