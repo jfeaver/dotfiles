@@ -1,3 +1,8 @@
+### RVM
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 ### HOMEBREW
 export PATH=/usr/local/bin:$PATH
 
@@ -22,11 +27,6 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
-
-### RVM
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ### GIT
 # Add git uprades to PATH
