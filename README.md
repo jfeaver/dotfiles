@@ -41,6 +41,7 @@ git@github.com:jfeaver/dotfiles.git ~/`
   - ~/.omzshrc
   - ~/.vimrc
   - ~/.tmux.conf
+  - ~/.gemrc
 
 2. Create symbolic links to dotfile config files. I.E. `ln -s ~/dotfiles/zshrc ~/.zshrc`
 
