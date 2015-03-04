@@ -5,11 +5,12 @@ function rm~ {
   find . -name 'dump.rdb' -exec rm {} \;
 }
 
-alias ssh-ayn-prod="ssh nathan@cl-web5812.carbonlogic.com"
-alias ssh-ayn-dev="ssh nathan@cl-web5811.carbonlogic.com"
-
 alias pgstart="su postgres -c 'source ~/.bashrc && pg_ctl start'"
 alias pgstop="su postgres -c 'source ~/.bashrc && pg_ctl stop'"
+
+function gitsweep {
+  git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
+}
 
 function fileserver {
   if [ $1 ]; then
