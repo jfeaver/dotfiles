@@ -5,8 +5,11 @@ function rm~ {
   find . -name 'dump.rdb' -exec rm {} \;
 }
 
+alias ssh-se="ssh studentenergy.org@s116422.gridserver.com"
+
 alias pgstart="su postgres -c 'source ~/.bashrc && pg_ctl start'"
 alias pgstop="su postgres -c 'source ~/.bashrc && pg_ctl stop'"
+alias gitundo="git reset --soft HEAD~1; git status"
 
 function gitsweep {
   git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
