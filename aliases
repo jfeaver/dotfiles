@@ -10,9 +10,14 @@ alias ssh-se="ssh studentenergy.org@s116422.gridserver.com"
 alias pgstart="su postgres -c 'source ~/.bashrc && pg_ctl start'"
 alias pgstop="su postgres -c 'source ~/.bashrc && pg_ctl stop'"
 alias gitundo="git reset --soft HEAD~1; git status"
+# alias gitpushpr="git push 2>&1 tee /dev/tty | grep -o '^https.*$' | xargs open"   # Not quite working
 
 function gitsweep {
   git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
+}
+
+function gitpushup {
+  eval "$( git push 2>&1 >/dev/null | grep -o 'git push.*$' )"
 }
 
 function fileserver {
