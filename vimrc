@@ -28,6 +28,14 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'user/L9', {'name': 'newL9'}
 
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'kchmck/vim-coffee-script'
+
+" 2 dependencies for vim-snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+" Community contributed snippets
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -226,3 +234,6 @@ if filereadable(".vimrc.custom")
   so .vimrc.custom
 endif
 
+if !exists(":UpdateHashSyntax")
+  command UpdateHashSyntax :%s/:\(\w\+\) =>/\1:/g
+endif
