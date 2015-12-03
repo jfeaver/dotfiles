@@ -4,7 +4,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ### HOMEBREW
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:~/Applications/Qt5.4.2/5.4/clang_64/bin:$PATH
 
 ### OH-MY-ZSHRC
 # Path to your oh-my-zsh installation.
