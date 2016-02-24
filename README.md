@@ -44,3 +44,4 @@ git@github.com:jfeaver/dotfiles.git ~/`
   - ~/.gemrc
 
 3. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
+4. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
