@@ -33,7 +33,7 @@ the powerline font as the Non-ASCII font.
 Setup
 =====
 
-1. Clone this repository to your home directory: `git clone
+1. Clone this repository into your home directory: `git clone
 git@github.com:jfeaver/dotfiles.git ~/`
 
 2. Move or remove existing config files (if they exist):
@@ -43,5 +43,4 @@ git@github.com:jfeaver/dotfiles.git ~/`
   - ~/.tmux.conf
   - ~/.gemrc
 
-2. Create symbolic links to dotfile config files. I.E. `ln -s ~/dotfiles/zshrc ~/.zshrc`
-
+3. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
