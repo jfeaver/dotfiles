@@ -53,7 +53,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # User configuration
 
-  export PATH="/home/nathan/.rvm/gems/ruby-2.3.0/bin:/home/nathan/.rvm/gems/ruby-2.3.0@global/bin:/home/nathan/.rvm/rubies/ruby-2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/nathan/.rvm/bin:/home/nathan/.rvm/bin:/home/nathan/.rvm/bin:/home/nathan/.rvm/bin"
+#  export PATH="/home/nathan/.rvm/gems/ruby-2.3.0/bin:/home/nathan/.rvm/gems/ruby-2.3.0@global/bin:/home/nathan/.rvm/rubies/ruby-2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/nathan/.rvm/bin:/home/nathan/.rvm/bin:/home/nathan/.rvm/bin:/home/nathan/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
