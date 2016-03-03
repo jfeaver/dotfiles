@@ -36,7 +36,7 @@ fi
 #   echo "[${ref#refs/heads/}] "
 # }
 # local branch='$(parse_git_branch)'
-# 
+#
 # PS1="%{$fg[green]%}${branch}%{$reset_color%}`whoami`:%{$fg[blue]%}%~%{$reset_color%}$ "
 # setopt promptsubst
 
@@ -55,7 +55,7 @@ setopt AUTO_CD
 
 # Use caps lock as a ctrl key and escape if tapped by itself
 # Use ctrl keys as escaped if tapped by themselves
-if [ -x xcape ]; then
+if [ -x /usr/bin/xcape ]; then
   setxkbmap -option 'caps:ctrl_modifier'
   xcape -e 'Caps_Lock=Escape;Control_L=Escape;Control_R=Escape'
 fi
