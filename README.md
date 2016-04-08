@@ -10,8 +10,17 @@ Dependencies
 I use Homebrew to install: zsh, vim, git, tmux
 I install Oh-My-Zsh from it's GitHub homepage
 
-tmux uses reattach-to-user-namespace which can be installed via Homebrew (it allows us
+tmux might need reattach-to-user-namespace which can be installed via Homebrew (it allows us
 to copy/paste inside tmux sessions in OSX).
+
+### Caps and R-ctrl key remapping
+
+Linux: [xcape](https://github.com/alols/xcape)
+Mac: Change Keyboard Modifier Keys, install [Karabiner](https://pqrs.org/osx/karabiner/) and change left control settings (after granting Karabiner accessibility options in Security preferences)
+
+[source](http://www.economyofeffort.com/2014/08/11/beyond-ctrl-remap-make-that-caps-lock-key-useful/)
+
+### Powerline
 
 I use powerline which is tricky to install.  It also requires your terminal to support
 patched fonts or fontconfig.
@@ -41,7 +50,10 @@ git@github.com:jfeaver/dotfiles.git ~/`
   - ~/.omzshrc
   - ~/.vimrc
   - ~/.tmux.conf
+  - ~/.rvmrc
   - ~/.gemrc
+  - ~/.gitignore\_global
 
-3. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
-4. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
+3. Run `git config --global core.excludesfile ~/.gitignore_global` if you haven't already
+4. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
+5. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
