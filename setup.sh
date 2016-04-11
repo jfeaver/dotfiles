@@ -9,3 +9,6 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 # Run this command to add the global gitignore
 # git config --global core.excludesfile ~/.gitignore_global
 ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
+# Run this command to make start executable:
+# chmod +x /usr/local/bin/start
+ln -s ~/dotfiles/start.rb /usr/local/bin/start

@@ -20,9 +20,6 @@ if [ -d "$HOME/Library/Python/2.7/bin" ]; then
   PATH="$HOME/Library/Python/2.7/bin:$PATH"
 fi
 
-### HEROKU TOOLBELT
-export PATH="/usr/local/heroku/bin:$PATH"
-
 ### ALIASES
 if [ -f ~/dotfiles/aliases ]; then
   . ~/dotfiles/aliases

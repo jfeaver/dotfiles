@@ -30,6 +30,8 @@ You'll need PyPy (a JIT python compiler) [from the website](http://pypy.org/down
 You'll need pip (a python package manager) [from the website](http://pip.readthedocs.org/en/latest/installing.html).
 Then you'll be able to install powerline: `sudo pip install --user git+git://github.com/Lokaltog/powerline`.
 
+Then you'll be able to install powerline: `sudo pip install powerline-status`.
+
 NOTE: Using the user flag installs the powerline package into your user directory.  If you
 want to install the package globally, you'll need to modify the vimrc and tmux.conf files
 here with the correct global powerline.conf filepaths.
@@ -57,3 +59,5 @@ git@github.com:jfeaver/dotfiles.git ~/`
 3. Run `git config --global core.excludesfile ~/.gitignore_global` if you haven't already
 4. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
 5. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
+6. Run `chmod +x /usr/local/bin/start`
+
