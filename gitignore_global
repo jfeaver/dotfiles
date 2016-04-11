@@ -1,6 +1,8 @@
 *.swp
 *.swo
 *~
+.ruby-version
+.ruby-gemset
 
 # Logs and databases #
 ######################
