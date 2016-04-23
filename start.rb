@@ -5,6 +5,7 @@
 # Provide `start` completions
 if ARGV.first == '--complete'
   puts 'fenix'
+  puts 'canuck'
   exit
 end
 
@@ -52,6 +53,11 @@ Tmux = Struct.new(:name, :windows) do
     project({ :dir => "~/proj/#{name}" }.merge(opts), &block)
   end
 
+  def self.personal_project(opts = {}, &block)
+    name = opts.fetch(:name)
+    project({ :dir => "~/personal/#{name}" }.merge(opts), &block)
+  end
+
   def self.project(opts = {})
     name = opts.fetch(:name)
     windows = opts.fetch(:windows) { %w(server dev util) }
@@ -89,6 +95,8 @@ end
 case ARGV.first
 when 'fenix'
   Tmux.work_project(:name => 'fenix')
+when 'canuck'
+  Tmux.personal_project(name: 'canuck')
 else
-  exec('start', 'help', 'project')
+  exit 1
 end
