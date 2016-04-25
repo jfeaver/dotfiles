@@ -6,6 +6,8 @@
 if ARGV.first == '--complete'
   puts 'fenix'
   puts 'canuck'
+  puts 'dotfiles'
+  puts 'yegrb'
   exit
 end
 
@@ -97,6 +99,14 @@ when 'fenix'
   Tmux.work_project(:name => 'fenix')
 when 'canuck'
   Tmux.personal_project(name: 'canuck')
+when 'dotfiles'
+  Tmux.project({
+    name: 'dotfiles',
+    dir: '~/dotfiles',
+    windows: %w(trial work)
+  })
+when 'yegrb'
+  Tmux.personal_project(name: 'yegrb')
 else
   exit 1
 end
