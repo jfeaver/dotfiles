@@ -29,6 +29,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/nerdtree'
 
 " 2 dependencies for vim-snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -237,3 +238,13 @@ endif
 if !exists(":UpdateHashSyntax")
   command UpdateHashSyntax :%s/:\(\w\+\) =>/\1:/g
 endif
+
+" NERDTree
+" How can I open a NERDTree automatically when vim starts up if no files were
+" specified?
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" How can I close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" How can I map a specific key or shortcut to open NERDTree?
+map <C-n> :NERDTreeToggle<CR>
