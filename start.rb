@@ -98,7 +98,7 @@ case ARGV.first
 when 'fenix'
   Tmux.work_project(:name => 'fenix')
 when 'canuck'
-  Tmux.personal_project(name: 'canuck')
+  Tmux.personal_project(name: 'canuck', windows: %w(console dev util))
 when 'dotfiles'
   Tmux.project({
     name: 'dotfiles',
