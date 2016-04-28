@@ -27,10 +27,12 @@ Plugin 'gmarik/Vundle.vim'
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 
+" Syntax highlighting
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'scrooloose/nerdtree'
+Plugin 'groenewege/vim-less'
 
+Plugin 'scrooloose/nerdtree'
 " 2 dependencies for vim-snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
