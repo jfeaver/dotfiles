@@ -6,6 +6,7 @@
 if ARGV.first == '--complete'
   puts 'fenix'
   puts 'canuck'
+  puts 'empty_struct'
   puts 'dotfiles'
   puts 'yegrb'
   exit
@@ -99,6 +100,8 @@ when 'fenix'
   Tmux.work_project(:name => 'fenix')
 when 'canuck'
   Tmux.personal_project(name: 'canuck', windows: %w(console dev util))
+when 'empty_struct'
+  Tmux.personal_project(name: 'empty_struct', windows: %w(console dev util))
 when 'dotfiles'
   Tmux.project({
     name: 'dotfiles',
