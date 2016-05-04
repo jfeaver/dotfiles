@@ -1,8 +1,8 @@
+# Editor generated #
+####################
 *.swp
 *.swo
 *~
-.ruby-version
-.ruby-gemset
 
 # Logs and databases #
 ######################
@@ -19,3 +19,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ruby libraries generated #
+############################
+.byebug_history
