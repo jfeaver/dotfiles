@@ -11,7 +11,6 @@ alias pgstop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 alias pgstart="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pgps="ps auxw | grep postgres"
 alias gitundo="git reset --soft HEAD~1; git status"
-# alias gitpushpr="git push 2>&1 tee /dev/tty | grep -o '^https.*$' | xargs open"   # Not quite working
 
 function gitsweep {
   git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
@@ -43,35 +42,7 @@ function s3_deploy {
 
 ### TMUX
 
-# New Session
-function tmn {
-  if [ $1 ]; then
-    tmux -2 new -s $1
-  else
-    echo "expected session_name argument"
-  fi
-}
-
-# Attach Session
-function tma {
-  if [ $1 ]; then
-    tmux -2 attach -t $1
-  else
-    echo "expected session_name argument"
-  fi
-}
-
-# Switch Session
-function tms {
-  if [ $1 ]; then
-    tmux -2 switch -t $1
-  else
-    echo "expected session_name argument"
-  fi
-}
-
 # List Sessions
 function tml {
   tmux list-sessions
 }
-
