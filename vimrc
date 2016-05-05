@@ -1,4 +1,5 @@
 """"""""""""""""""  VUNDLE """""""""""""""""""""""""""""""
+" This must be first, because it changes other options as a side effect.
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -90,22 +91,18 @@ if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
+  set nobackup  " do not keep a backup file, use versions instead
 else
-  set backup		" keep a backup file
+  set backup    " keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50  " keep 50 lines of command line history
+set ruler       " show the cursor position all the time
+set showcmd     " display incomplete commands
+set incsearch   " do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -142,8 +139,8 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " For all text files set 'textwidth' to N characters.
+  autocmd FileType text setlocal textwidth=120
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -159,7 +156,7 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent    " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -179,24 +176,12 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
-" alt+n or alt+p to navigate between entries in QuickFix
-map <silent> <m-p> :cp <cr>
-map <silent> <m-n> :cn <cr>
-
-" Change which file opens after executing :Rails command
-"let g:rails_default_file='config/database.yml'
-
-syntax enable
-
 set cf  " Enable error files & error jumping.
 set autowrite  " Writes on make/shell commands
 set nu!  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set t_Co=256
-
-" Powerline
-set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 " Formatting
 set ts=2
@@ -211,8 +196,8 @@ set smarttab
 set expandtab
 
 " Visual
-set showmatch  " Show matching brackets.
-set mat=5  " Bracket blinking.
+set showmatch   " Show matching brackets.
+set mat=5       " Bracket blinking.
 set list
 " Show trailing space as ~
 set lcs=tab:..,trail:~,extends:>,precedes:<
@@ -227,7 +212,7 @@ autocmd BufWritePre *.* :%s/\s\+$//e
 " set clipboard=unnamed
 
 " Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+" noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " Newlines without entering insert mode
 nmap <S-Enter> O<Esc>
