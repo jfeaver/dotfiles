@@ -183,7 +183,7 @@ set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set t_Co=256
 
-" Formatting
+"" Formatting
 set ts=2
 set copyindent
 set shiftwidth=2  " Tabs under smart indent
@@ -195,7 +195,7 @@ set cindent
 set smarttab
 set expandtab
 
-" Visual
+"" Visual
 set showmatch   " Show matching brackets.
 set mat=5       " Bracket blinking.
 set list
@@ -208,15 +208,18 @@ hi Search cterm=NONE ctermfg=grey ctermbg=blue
 " Remove trailing whitespace on save
 autocmd BufWritePre *.* :%s/\s\+$//e
 
+"" Commands
+let mapleader = ","
+
 " Yank text to the OS X clipboard
-" set clipboard=unnamed
+vnoremap <leader>c :write !pbcopy<CR><CR>
 
 " Preserve indentation while pasting text from the OS X clipboard
-" noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+nnoremap <leader>v :read !pbpaste<CR>
 
 " Newlines without entering insert mode
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
+nnoremap <S-Enter> O<Esc>
+nnoremap <CR> o<Esc>
 
 " Source project specific vim configs
 if filereadable(".vimrc.custom")
