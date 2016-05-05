@@ -171,12 +171,13 @@ if !exists(":DiffOrig")
       \ | wincmd p | diffthis
 endif
 
-" Nathan's additions
+" Nathan's additions (syntax highlighting)
 au! BufRead,BufNewFile *.haml setfiletype haml
 au BufNewFile,BufRead *.spec setfiletype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 " alt+n or alt+p to navigate between entries in QuickFix
 map <silent> <m-p> :cp <cr>
