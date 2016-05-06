@@ -1,5 +1,7 @@
 [user]
 	name = Nathan Feaver
 	email = nathan.feaver@gmail.com
+[push]
+	default = simple
 [core]
-	excludesfile = /Users/nathan/.gitignore_global
+	excludesfile = ~/.gitignore_global
