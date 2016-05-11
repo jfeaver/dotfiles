@@ -3,3 +3,7 @@
 	email = nathan.feaver@gmail.com
 [core]
 	excludesfile = /Users/nathan/.gitignore_global
+[github]
+	user = jfeaver
+[ghi]
+	token = !security find-internet-password -a jfeaver -s github.com -l 'ghi token' -w

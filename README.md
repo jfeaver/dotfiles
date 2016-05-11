@@ -13,6 +13,9 @@ I install Oh-My-Zsh from it's GitHub homepage
 tmux might need reattach-to-user-namespace which can be installed via Homebrew (it allows us
 to copy/paste inside tmux sessions in OSX).
 
+hub - brew install hub - command line tool for GitHub
+ghi - brew install ghi - command line tool to manage GitHub issues and pull requests
+
 ### Caps and R-ctrl key remapping
 
 Linux: [xcape](https://github.com/alols/xcape)
@@ -21,6 +24,8 @@ Mac: Change Keyboard Modifier Keys, install [Karabiner](https://pqrs.org/osx/kar
 [source](http://www.economyofeffort.com/2014/08/11/beyond-ctrl-remap-make-that-caps-lock-key-useful/)
 
 ### Powerline
+
+NOTE: I no longer use powerline
 
 I use powerline which is tricky to install.  It also requires your terminal to support
 patched fonts or fontconfig.
