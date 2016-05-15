@@ -9,6 +9,7 @@ if ARGV.first == '--complete'
   puts 'empty_struct'
   puts 'dotfiles'
   puts 'yegrb'
+  puts 'amy'
   exit
 end
 
@@ -110,6 +111,8 @@ when 'dotfiles'
   })
 when 'yegrb'
   Tmux.personal_project(name: 'yegrb')
+when 'amy'
+  Tmux.personal_project(name: 'amy', windows: %w(console dev util))
 else
   exit 1
 end
