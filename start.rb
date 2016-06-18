@@ -5,11 +5,10 @@
 # Provide `start` completions
 if ARGV.first == '--complete'
   puts 'fenix'
-  puts 'canuck'
-  puts 'empty_struct'
   puts 'dotfiles'
   puts 'yegrb'
   puts 'amy'
+  puts 'cube'
   exit
 end
 
@@ -99,10 +98,6 @@ end
 case ARGV.first
 when 'fenix'
   Tmux.work_project(:name => 'fenix')
-when 'canuck'
-  Tmux.personal_project(name: 'canuck', windows: %w(console dev util))
-when 'empty_struct'
-  Tmux.personal_project(name: 'empty_struct', windows: %w(console dev util))
 when 'dotfiles'
   Tmux.project({
     name: 'dotfiles',
@@ -113,6 +108,8 @@ when 'yegrb'
   Tmux.personal_project(name: 'yegrb')
 when 'amy'
   Tmux.personal_project(name: 'amy', windows: %w(console dev util))
+when 'cube'
+  Tmux.personal_project(name: 'cube', windows: %w(console dev util))
 else
   exit 1
 end
