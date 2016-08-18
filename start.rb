@@ -21,6 +21,10 @@ Tmux = Struct.new(:name, :windows) do
     def _tmux!(*args)
       exec('tmux', *args)
     end
+
+    def _sessions
+      `tmux ls`.scan(/^\w+/)
+    end
   end
 
   include Helpers
@@ -46,9 +50,11 @@ Tmux = Struct.new(:name, :windows) do
   end
 
   def self.start_or_attach(name, &block)
-    start(name, &block)
-  rescue
-    attach(name)
+    if has_session?(name)
+      attach(name)
+    else
+      start(name, &block)
+    end
   end
 
   def self.work_project(opts = {}, &block)
@@ -76,6 +82,10 @@ Tmux = Struct.new(:name, :windows) do
 
   def self.attach(name)
     _tmux!('attach', '-t', name)
+  end
+
+  def self.has_session?(name)
+    _sessions.include?(name)
   end
 
   def start(first_window_name)
@@ -120,6 +130,8 @@ else
       dir: path,
       windows: %w(test dev util)
     })
+  elsif ARGV.first.match(/^\w+$/) && Tmux.has_session?(ARGV.first)
+    Tmux.attach(ARGV.first)
   else
     exit 1
   end
