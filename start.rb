@@ -111,5 +111,16 @@ when 'amy'
 when 'cube'
   Tmux.personal_project(name: 'cube', windows: %w(console dev util))
 else
-  exit 1
+  if Dir.exist?(File.expand_path(ARGV.first))
+    path = File.expand_path(ARGV.first)
+    name = path.split('/').last
+    name = name.split(' ').first.downcase
+    Tmux.project({
+      name: name,
+      dir: path,
+      windows: %w(test dev util)
+    })
+  else
+    exit 1
+  end
 end
