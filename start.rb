@@ -10,6 +10,7 @@ if ARGV.first == '--complete'
   puts 'amy'
   puts 'cube'
   puts 'hamex'
+  puts 'exercism'
   exit
 end
 
@@ -123,6 +124,8 @@ when 'cube'
   Tmux.personal_project(name: 'cube', windows: %w(console dev util))
 when 'hamex'
   Tmux.personal_project(name: 'hamex', windows: %w(console dev util))
+when 'exercism'
+  Tmux.project(name: 'exercism', dir: '~/exercism', windows: %w(console dev util))
 else
   if Dir.exist?(File.expand_path(ARGV.first))
     path = File.expand_path(ARGV.first)
