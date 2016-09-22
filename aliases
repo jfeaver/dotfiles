@@ -1,17 +1,19 @@
-alias addvh="sudo vi /etc/hosts; sudo vi /etc/apache2/extra/httpd-vhosts.conf;"
-function rm~ {
-  find . -name '*~' -exec rm {} \;
-  find . -name '*.orig' -exec rm {} \;
-  find . -name 'dump.rdb' -exec rm {} \;
+### TMUX
+
+# List Sessions
+function tml {
+  tmux list-sessions
 }
 
-alias ssh-se="ssh studentenergy.org@s116422.gridserver.com"
+### POSTGRES
 
 alias pgstop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pgstart="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pgps="ps auxw | grep postgres"
-alias gitundo="git reset --soft HEAD~1; git status"
 
+### GIT
+
+alias gitundo="git reset --soft HEAD~1; git status"
 function gitsweep {
   git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
 }
@@ -48,6 +50,12 @@ function glw {
   ghi label $1 "WIP"
 }
 
+### ZSH
+alias compose='nocorrect compose'
+alias fx='nocorrect fx'
+
+### MISC
+
 function fileserver {
   if [ $1 ]; then
     python -mSimpleHTTPServer $1
@@ -67,10 +75,8 @@ function s3_deploy {
   s3cmd sync ./output/ s3://www.nathanfeaver.com
 }
 
-
-### TMUX
-
-# List Sessions
-function tml {
-  tmux list-sessions
+function rm~ {
+  find . -name '*~' -exec rm {} \;
+  find . -name '*.orig' -exec rm {} \;
+  find . -name 'dump.rdb' -exec rm {} \;
 }
