@@ -50,10 +50,6 @@ function glw {
   ghi label $1 "WIP"
 }
 
-### ZSH
-alias compose='nocorrect compose'
-alias fx='nocorrect fx'
-
 ### MISC
 
 function fileserver {
