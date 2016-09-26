@@ -32,7 +32,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
-Plugin 'lambdatoast/elm.vim'
+Plugin 'ElmCast/elm-vim'
 
 Plugin 'scrooloose/nerdtree'
 " 2 dependencies for vim-snipmate
