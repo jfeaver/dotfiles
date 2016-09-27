@@ -127,6 +127,9 @@ when 'hamex'
 when 'exercism'
   Tmux.project(name: 'exercism', dir: '~/exercism', windows: %w(console dev util))
 else
+  # start tmux in a specific directory (relative to the cwd): `start personal/fun_project`)
+  # Name of the tmux session is the final directory name
+  # After the first time, you can start using the name (`start fun_project`)
   if Dir.exist?(File.expand_path(ARGV.first))
     path = File.expand_path(ARGV.first)
     name = path.split('/').last
