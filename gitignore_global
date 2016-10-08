@@ -23,3 +23,7 @@ Thumbs.db
 # Ruby libraries generated #
 ############################
 .byebug_history
+
+# Elm packages #
+################
+elm-stuff
