@@ -34,7 +34,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'ElmCast/elm-vim'
 
-Plugin 'scrooloose/nerdtree'
 " 2 dependencies for vim-snipmate
 " Plugin 'MarcWeber/vim-addon-mw-utils'
 " Plugin 'tomtom/tlib_vim'
@@ -195,6 +194,8 @@ set formatoptions=tcqr
 set cindent
 set smarttab
 set expandtab
+
+autocmd Filetype elm setlocal ts=4 sw=4 sts=0 expandtab
 
 "" Visual
 set showmatch   " Show matching brackets.
