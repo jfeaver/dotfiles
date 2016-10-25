@@ -52,6 +52,8 @@ function glw {
 
 ### MISC
 
+alias ctags="`brew --prefix`/bin/ctags"
+
 function fileserver {
   if [ $1 ]; then
     python -mSimpleHTTPServer $1
