@@ -27,3 +27,7 @@ Thumbs.db
 # Elm packages #
 ################
 elm-stuff
+
+# ctags #
+#########
+tags
