@@ -20,6 +20,11 @@
 ehthumbs.db
 Thumbs.db
 
+# RVM #
+#######
+.ruby-version
+.ruby-gemset
+
 # Ruby libraries generated #
 ############################
 .byebug_history
