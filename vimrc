@@ -194,6 +194,7 @@ set formatoptions=tcqr
 set cindent
 set smarttab
 set expandtab
+set relativenumber
 
 autocmd Filetype elm setlocal ts=4 sw=4 sts=0 expandtab
 

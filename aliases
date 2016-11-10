@@ -78,3 +78,5 @@ function rm~ {
   find . -name '*.orig' -exec rm {} \;
   find . -name 'dump.rdb' -exec rm {} \;
 }
+
+alias my_cop="rubocop -D -c .rubocop.nathan.yml"
