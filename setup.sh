@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ln -s ~/dotfiles/atomrc.cson ~/.atom/config.cson
 ln -s ~/dotfiles/omzshrc ~/.omzshrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/rvmrc ~/.rvmrc

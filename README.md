@@ -53,6 +53,7 @@ Setup
 git@github.com:jfeaver/dotfiles.git ~/`
 
 2. Move or remove existing config files (if they exist):
+  - ~/.atom/config.cson
   - ~/.zshrc
   - ~/.omzshrc
   - ~/.vimrc

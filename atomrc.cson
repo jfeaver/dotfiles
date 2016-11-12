@@ -1,0 +1,33 @@
+"*":
+  core:
+    disabledPackages: [
+      "welcome"
+    ]
+    openEmptyEditorOnStart: false
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    fontFamily: "inconsolata"
+    lineHeight: 1.2
+    scrollPastEnd: true
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "64af57f1-afc2-8123-6c2d-b4d1345f21f6"
+  "terminal-plus":
+    ansiColors:
+      zBright:
+        brightCyan: "#564d6c"
+        brightGreen: "#567e56"
+        brightYellow: "#9d966b"
+    style:
+      fontFamily: "inconsolata"
+      theme: "solarized-light"
+  whitespace:
+    ensureSingleTrailingNewline: false
+".elm.source":
+  editor:
+    preferredLineLength: 300
+    tabLength: 4
