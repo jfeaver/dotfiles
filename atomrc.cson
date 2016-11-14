@@ -1,4 +1,7 @@
 "*":
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
   core:
     disabledPackages: [
       "welcome"
@@ -30,8 +33,7 @@
       fontFamily: "inconsolata"
       theme: "solarized-light"
   whitespace:
-    ensureSingleTrailingNewline: false
+    ignoreWhitespaceOnCurrentLine: false
 ".elm.source":
   editor:
-    preferredLineLength: 300
     tabLength: 4
