@@ -5,6 +5,22 @@
   core:
     disabledPackages: [
       "welcome"
+      "vim-mode-plus"
+      "language-java"
+      "language-go"
+      "language-git"
+      "language-csharp"
+      "language-clojure"
+      "language-c"
+      "language-make"
+      "language-mustache"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-python"
+      "language-property-list"
+      "language-sql"
+      "language-toml"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "limited"
@@ -22,16 +38,40 @@
     userId: "64af57f1-afc2-8123-6c2d-b4d1345f21f6"
   "terminal-plus":
     ansiColors:
+      normal:
+        black: "#002b36"
+        blue: "#268bd2"
+        cyan: "#2aa198"
+        green: "#859900"
+        magenta: "#d33682"
+        red: "#dc322f"
+        white: "#ffffff"
+        yellow: "#b58900"
       zBright:
+        brightBlack: "#002b36"
         brightBlue: "#268bd2"
         brightCyan: "#2aa198"
         brightGreen: "#859900"
+        brightMagenta: "#d33682"
         brightRed: "#dc322f"
+        brightWhite: "#ffffff"
         brightYellow: "#b58900"
+    iconColors:
+      blue: "#268bd2"
+      cyan: "#2aa198"
+      green: "#859900"
+      magenta: "#d33682"
+      orange: "#cb4b16"
+      pink: "#ff42b5"
+      purple: "#6c71c4"
+      red: "#dc322f"
+      yellow: "#b58900"
     style:
       fontAntialiasing: "Default"
       fontFamily: "inconsolata"
       theme: "solarized-light"
+  "tree-view":
+    autoReveal: true
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
 ".elm.source":
