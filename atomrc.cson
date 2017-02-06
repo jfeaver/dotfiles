@@ -7,7 +7,6 @@
   core:
     disabledPackages: [
       "welcome"
-      "vim-mode-plus"
       "language-java"
       "language-go"
       "language-git"
