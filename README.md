@@ -61,6 +61,7 @@ git@github.com:jfeaver/dotfiles.git ~/`
   - ~/.rvmrc
   - ~/.gemrc
   - ~/.gitignore\_global
+  - ~/.ssh/config
 
 3. Run `git config --global core.excludesfile ~/.gitignore_global` if you haven't already
 4. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
