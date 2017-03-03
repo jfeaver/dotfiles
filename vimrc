@@ -72,28 +72,6 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
 
-" .vimrc from Ubuntu ---->
-
-" Manage my runtimepath with pathogen.vim to add plugins like vim-LESS syntax
-" hightlighting.
-" execute pathogen#infect()
-
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2008 Dec 17
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -106,9 +84,6 @@ set history=50  " keep 50 lines of command line history
 set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
 set incsearch   " do incremental searching
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -172,12 +147,12 @@ if !exists(":DiffOrig")
 endif
 
 " Nathan's additions (syntax highlighting)
-au! BufRead,BufNewFile *.haml setfiletype haml
-au BufNewFile,BufRead *.spec setfiletype=ruby
-au BufNewFile,BufRead Gemfile set filetype=ruby
-au BufNewFile,BufRead *.md set filetype=markdown
-au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
-au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+autocmd! BufRead,BufNewFile *.haml setfiletype haml
+autocmd BufNewFile,BufRead *.spec setfiletype=ruby
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
+autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 set cf  " Enable error files & error jumping.
 set autowrite  " Writes on make/shell commands
@@ -236,12 +211,15 @@ if !exists(":UpdateHashSyntax")
   command UpdateHashSyntax :%s/:\(\w\+\) =>/\1:/g
 endif
 
-" NERDTree
-" How can I open a NERDTree automatically when vim starts up if no files were
-" specified?
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" How can I close vim if the only window left open is a NERDTree?
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" How can I map a specific key or shortcut to open NERDTree?
-map <C-n> :NERDTreeToggle<CR>
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
