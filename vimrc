@@ -12,9 +12,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" Fuzzy File Finder
-Plugin 'ctrlpvim/ctrlp.vim'
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -30,6 +27,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
+
+" Fuzzy File Finder
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax highlighting
 Plugin 'elixir-lang/vim-elixir'
@@ -153,6 +153,7 @@ autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
+autocmd BufNewFile,BufRead *.xlsx.axlsx set ft=ruby
 
 set cf  " Enable error files & error jumping.
 set autowrite  " Writes on make/shell commands
