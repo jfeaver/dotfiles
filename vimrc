@@ -36,6 +36,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'ElmCast/elm-vim'
+Plugin 'leafgarland/typescript-vim'
 
 " 2 dependencies for vim-snipmate
 " Plugin 'MarcWeber/vim-addon-mw-utils'
