@@ -37,6 +37,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'ElmCast/elm-vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'tpope/vim-fugitive' " Git integration
+Plugin 'tpope/vim-rhubarb' " View file on GitHub plugin for Fugitive
 
 " 2 dependencies for vim-snipmate
 " Plugin 'MarcWeber/vim-addon-mw-utils'
