@@ -5,6 +5,7 @@
 # Provide `start` completions
 if ARGV.first == '--complete'
   puts 'fenix'
+  puts 'measure'
   puts 'dotfiles'
   puts 'yegrb'
   puts 'website'
@@ -111,6 +112,8 @@ end
 case ARGV.first
 when 'fenix'
   Tmux.work_project(:name => 'fenix')
+when 'fenix'
+  Tmux.work_project(:name => 'measure')
 when 'dotfiles'
   Tmux.project({
     name: 'dotfiles',
