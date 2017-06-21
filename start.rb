@@ -110,26 +110,18 @@ Tmux = Struct.new(:name, :windows) do
 end
 
 case ARGV.first
-when 'fenix'
-  Tmux.work_project(:name => 'fenix')
-when 'fenix'
-  Tmux.work_project(:name => 'measure')
+when 'fenix', 'measure'
+  Tmux.work_project(:name => ARGV.first)
 when 'dotfiles'
   Tmux.project({
     name: 'dotfiles',
     dir: '~/dotfiles',
     windows: %w(trial work)
   })
+when 'amy', 'cube', 'hamex', 'yegrb'
+  Tmux.personal_project(name: ARGV.first, windows: %w(console dev util))
 when 'website'
   Tmux.personal_project(name: 'website', dir: '~/personal/nathanfeaver.com')
-when 'yegrb'
-  Tmux.personal_project(name: 'yegrb')
-when 'amy'
-  Tmux.personal_project(name: 'amy', windows: %w(console dev util))
-when 'cube'
-  Tmux.personal_project(name: 'cube', windows: %w(console dev util))
-when 'hamex'
-  Tmux.personal_project(name: 'hamex', windows: %w(console dev util))
 when 'exercism'
   Tmux.project(name: 'exercism', dir: '~/exercism', windows: %w(console dev util))
 else
