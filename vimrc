@@ -227,3 +227,5 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" elm-vim
+let g:elm_format_autosave = 1 " auto format on save
