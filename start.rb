@@ -116,12 +116,12 @@ when 'dotfiles'
     dir: '~/dotfiles',
     windows: %w(trial work)
   })
-when 'amy',
-  Tmux.personal_project(name: ARGV.first, windows: %w(console dev util))
-when 'website', 'flourish',
+when 'amy', 'flourish',
+  Tmux.personal_project(name: ARGV.first)
+when 'website',
   Tmux.personal_project(name: 'website', dir: '~/personal/nathanfeaver.com')
 when 'exercism'
-  Tmux.project(name: 'exercism', dir: '~/exercism', windows: %w(console dev util))
+  Tmux.project(name: 'exercism', dir: '~/exercism')
 else
   # start tmux in a specific directory (relative to the cwd): `start personal/fun_project`)
   # Name of the tmux session is the final directory name
@@ -132,8 +132,7 @@ else
     name = name.split(' ').first.downcase
     Tmux.project({
       name: name,
-      dir: path,
-      windows: %w(test dev util)
+      dir: path
     })
   elsif ARGV.first.match(/^\w+$/) && Tmux.has_session?(ARGV.first)
     Tmux.attach(ARGV.first)
