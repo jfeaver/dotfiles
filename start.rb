@@ -7,11 +7,9 @@ if ARGV.first == '--complete'
   puts 'fenix'
   puts 'measure'
   puts 'dotfiles'
-  puts 'yegrb'
+  puts 'flourish'
   puts 'website'
   puts 'amy'
-  puts 'cube'
-  puts 'hamex'
   puts 'exercism'
   exit
 end
@@ -118,9 +116,9 @@ when 'dotfiles'
     dir: '~/dotfiles',
     windows: %w(trial work)
   })
-when 'amy', 'cube', 'hamex', 'yegrb'
+when 'amy',
   Tmux.personal_project(name: ARGV.first, windows: %w(console dev util))
-when 'website'
+when 'website', 'flourish',
   Tmux.personal_project(name: 'website', dir: '~/personal/nathanfeaver.com')
 when 'exercism'
   Tmux.project(name: 'exercism', dir: '~/exercism', windows: %w(console dev util))
