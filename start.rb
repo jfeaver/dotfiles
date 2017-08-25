@@ -61,17 +61,17 @@ Tmux = Struct.new(:name, :windows) do
 
   def self.work_project(opts = {}, &block)
     name = opts.fetch(:name)
-    project({ :dir => "~/proj/#{name}" }.merge(opts), &block)
+    project({ dir: "~/proj/#{name}" }.merge(opts), &block)
   end
 
   def self.personal_project(opts = {}, &block)
     name = opts.fetch(:name)
-    project({ :dir => "~/personal/#{name}" }.merge(opts), &block)
+    project({ dir: "~/personal/#{name}" }.merge(opts), &block)
   end
 
   def self.project(opts = {})
     name = opts.fetch(:name)
-    windows = opts.fetch(:windows) { %w(server dev util) }
+    windows = opts.fetch(:windows, %w(server dev util))
     Tmux.start_or_attach(name) do |t|
       windows.each do |window|
         t.window(window).
@@ -109,16 +109,16 @@ end
 
 case ARGV.first
 when 'fenix', 'measure'
-  Tmux.work_project(:name => ARGV.first)
+  Tmux.work_project(name: ARGV.first)
 when 'dotfiles'
-  Tmux.project({
+  Tmux.project(
     name: 'dotfiles',
     dir: '~/dotfiles',
     windows: %w(trial work)
-  })
-when 'amy', 'flourish',
+  )
+when 'amy', 'flourish'
   Tmux.personal_project(name: ARGV.first)
-when 'website',
+when 'website'
   Tmux.personal_project(name: 'website', dir: '~/personal/nathanfeaver.com')
 when 'exercism'
   Tmux.project(name: 'exercism', dir: '~/exercism')
@@ -130,10 +130,10 @@ else
     path = File.expand_path(ARGV.first)
     name = path.split('/').last
     name = name.split(' ').first.downcase
-    Tmux.project({
+    Tmux.project(
       name: name,
       dir: path
-    })
+    )
   elsif ARGV.first.match(/^\w+$/) && Tmux.has_session?(ARGV.first)
     Tmux.attach(ARGV.first)
   else
