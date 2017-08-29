@@ -193,15 +193,6 @@ hi Search cterm=NONE ctermfg=grey ctermbg=blue
 " Remove trailing whitespace on save
 autocmd BufWritePre *.* :%s/\s\+$//e
 
-"" Commands
-let mapleader = ","
-
-" Yank text to the OS X clipboard
-vnoremap <leader>c :write !pbcopy<CR><CR>
-
-" Preserve indentation while pasting text from the OS X clipboard
-nnoremap <leader>v :read !pbpaste<CR>
-
 " Newlines without entering insert mode
 nnoremap <S-Enter> O<Esc>
 nnoremap <CR> o<Esc>
