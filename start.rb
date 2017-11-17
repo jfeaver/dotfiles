@@ -5,6 +5,7 @@
 # Provide `start` completions
 if ARGV.first == '--complete'
   puts 'fenix'
+  puts 'sentry'
   puts 'measure'
   puts 'dotfiles'
   puts 'flourish'
@@ -108,7 +109,7 @@ Tmux = Struct.new(:name, :windows) do
 end
 
 case ARGV.first
-when 'fenix', 'measure'
+when 'fenix', 'measure', 'sentry'
   Tmux.work_project(name: ARGV.first)
 when 'dotfiles'
   Tmux.project(
