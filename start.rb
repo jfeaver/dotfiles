@@ -12,6 +12,7 @@ if ARGV.first == '--complete'
   puts 'website'
   puts 'amy'
   puts 'exercism'
+  puts '* (personal/fun_project)'
   exit
 end
 
