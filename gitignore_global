@@ -28,6 +28,10 @@ Thumbs.db
 ############################
 .byebug_history
 
+# NPM #
+#######
+package-lock.json
+
 # Elm packages #
 ################
 elm-stuff
