@@ -80,3 +80,5 @@ function rm~ {
 }
 
 alias my_cop="rubocop -D -c .rubocop.nathan.yml"
+
+alias rof="rspec --only-failures"
