@@ -23,7 +23,7 @@ function gup {
 }
 
 function gpr {
-  hub pull-request
+  hub pull-request -b develop
 }
 
 function gas {
