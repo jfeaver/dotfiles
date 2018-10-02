@@ -50,6 +50,12 @@ function glw {
   ghi label $1 "WIP"
 }
 
+### TESTING
+
+alias rof="rspec --only-failures"
+alias rpr='rspec $(git diff --name-only develop spec/**/*_spec.rb)'
+alias my_cop="rubocop -D -c .rubocop.nathan.yml"
+
 ### MISC
 
 alias ctags="`brew --prefix`/bin/ctags"
@@ -78,7 +84,3 @@ function rm~ {
   find . -name '*.orig' -exec rm {} \;
   find . -name 'dump.rdb' -exec rm {} \;
 }
-
-alias my_cop="rubocop -D -c .rubocop.nathan.yml"
-
-alias rof="rspec --only-failures"
