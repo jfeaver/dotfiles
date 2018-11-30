@@ -5,20 +5,23 @@ if [ -e ~/.omzshrc ]; then
   . ~/.omzshrc
 fi
 
-### RVM
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+### Powerline
+# Make sure powerline is found
+if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+  export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+fi
 
 ### NPM
 # Add npm packages to the path
 export PATH=$PATH:/usr/local/share/npm/bin
 
-### Powerline
-# Make sure powerline is found
-if [ -d "$HOME/Library/Python/2.7/bin" ]; then
-  PATH="$HOME/Library/Python/2.7/bin:$PATH"
-fi
+### RVM
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+### Brew
+export PATH=/usr/local/sbin:$PATH
 
 ### ALIASES
 if [ -f ~/dotfiles/aliases ]; then
