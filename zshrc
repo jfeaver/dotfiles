@@ -21,8 +21,11 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ### chruby
-if [ -f source /usr/local/share/chruby/chruby.sh ]; then
+if [ -f /usr/local/share/chruby/chruby.sh ]; then
   source /usr/local/share/chruby/chruby.sh
+  if [ -f /usr/local/share/chruby/auto.sh ]; then
+    source /usr/local/share/chruby/auto.sh
+  fi
 fi
 
 ### Brew
