@@ -28,7 +28,7 @@ Tmux = Struct.new(:name, :windows) do
     end
 
     def _sessions
-      `tmux ls`.scan(/^\w+/)
+      `tmux ls`.scan(/^(.+): \d/).flatten
     end
   end
 
