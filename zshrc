@@ -2,7 +2,7 @@
 # Path to your oh-my-zsh installation.
 
 if [ -e ~/.omzshrc ]; then
-  . ~/.omzshrc
+  source ~/.omzshrc
 fi
 
 ### Powerline
@@ -20,12 +20,17 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+### chruby
+if [ -f source /usr/local/share/chruby/chruby.sh ]; then
+  source /usr/local/share/chruby/chruby.sh
+fi
+
 ### Brew
 export PATH=/usr/local/sbin:$PATH
 
 ### ALIASES
 if [ -f ~/dotfiles/aliases ]; then
-  . ~/dotfiles/aliases
+  source ~/dotfiles/aliases
 fi
 
 ### PROMPT
