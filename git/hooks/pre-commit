@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -e
+
+files() {
+    git diff --name-only --cached --full-index
+}
+
+check() {
+    while read file; do
+        filename=$(basename "$file")
+        extension="${filename##*.}"
+        if [ "rb" = $extension ]; then
+            if [ -f "$file" ]; then ruby -c $file >/dev/null; fi
+        fi
+    done
+}
+
+echo "Checking ruby syntax..."
+files | check
