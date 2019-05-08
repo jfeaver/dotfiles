@@ -37,9 +37,12 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'ElmCast/elm-vim'
 Plugin 'leafgarland/typescript-vim'
+
+" Other
 Plugin 'tpope/vim-fugitive' " Git integration
 Plugin 'tpope/vim-rhubarb' " View file on GitHub plugin for Fugitive
 Plugin 'Quramy/tsuquyomi' " typescript completions
+Plugin 'vim-utils/vim-ruby-fold' " Ruby code folding
 
 " 2 dependencies for vim-snipmate
 " Plugin 'MarcWeber/vim-addon-mw-utils'
