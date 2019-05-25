@@ -84,3 +84,6 @@ function rm~ {
   find . -name '*.orig' -exec rm {} \;
   find . -name 'dump.rdb' -exec rm {} \;
 }
+
+alias stopupdates='sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean FALSE'
+alias startupdates='sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean TRUE'
