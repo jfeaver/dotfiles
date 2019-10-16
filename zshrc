@@ -31,6 +31,11 @@ fi
 ### Brew
 export PATH=/usr/local/sbin:$PATH
 
+### Brew-installed Ruby
+if [ -d "/usr/local/opt/ruby/bin" ]; then
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
+fi
+
 ### ALIASES
 if [ -f ~/dotfiles/aliases ]; then
   source ~/dotfiles/aliases
@@ -67,3 +72,5 @@ if [ -x /usr/bin/xcape ]; then
   setxkbmap -option 'caps:ctrl_modifier'
   xcape -e 'Caps_Lock=Escape;Control_L=Escape;Control_R=Escape'
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

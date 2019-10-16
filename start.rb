@@ -2,6 +2,8 @@
 # Usage: start project PROJECT_NAME
 # Summary: Start up a project in tmux
 
+require 'pry'
+
 # Provide `start` completions
 if ARGV.first == '--complete'
   puts 'fenix'
@@ -137,9 +139,10 @@ else
       name: name,
       dir: path
     )
-  elsif ARGV.first.match(/^\w+$/) && Tmux.has_session?(ARGV.first)
+  elsif ARGV.first.match(/^[\w\-_]+$/) && Tmux.has_session?(ARGV.first)
     Tmux.attach(ARGV.first)
   else
+    binding.pry
     exit 1
   end
 end
