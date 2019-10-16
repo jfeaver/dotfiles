@@ -142,7 +142,8 @@ else
   elsif ARGV.first.match(/^[\w\-_]+$/) && Tmux.has_session?(ARGV.first)
     Tmux.attach(ARGV.first)
   else
-    binding.pry
+    puts "ERROR: Unknown project, directory, or session - '#{ARGV.first}'"
+    binding.pry if binding.respond_to?(:pry)
     exit 1
   end
 end
