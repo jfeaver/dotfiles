@@ -33,7 +33,7 @@ if [ -f /usr/local/share/chruby/chruby.sh ]; then
 fi
 
 ### rbenv
-if command -v rbenv >/dev/null; then
+if which rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
 
@@ -41,9 +41,9 @@ fi
 export PATH=/usr/local/sbin:$PATH
 
 ### Brew-installed Ruby
-if [ -d "/usr/local/opt/ruby/bin" ]; then
-  export PATH="/usr/local/opt/ruby/bin:$PATH"
-fi
+# if [ -d "/usr/local/opt/ruby/bin" ]; then
+#   export PATH="/usr/local/opt/ruby/bin:$PATH"
+# fi
 
 ### ALIASES
 if [ -f ~/dotfiles/aliases ]; then
