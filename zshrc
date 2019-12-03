@@ -13,12 +13,16 @@ fi
 
 ### NPM
 # Add npm packages to the path
-export PATH=$PATH:/usr/local/share/npm/bin
+if [ -d /usr/local/share/npm/bin ]; then
+  export PATH=$PATH:/usr/local/share/npm/bin
+fi
 
 ### RVM
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [ -d ~/.rvm/bin ]; then
+  export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
 
 ### chruby
 if [ -f /usr/local/share/chruby/chruby.sh ]; then
@@ -26,6 +30,11 @@ if [ -f /usr/local/share/chruby/chruby.sh ]; then
   if [ -f /usr/local/share/chruby/auto.sh ]; then
     source /usr/local/share/chruby/auto.sh
   fi
+fi
+
+### rbenv
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init -)"
 fi
 
 ### Brew
