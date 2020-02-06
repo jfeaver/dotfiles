@@ -80,9 +80,9 @@ function s3_deploy {
 }
 
 function rm~ {
-  find . -name '*~' -exec rm {} \;
-  find . -name '*.orig' -exec rm {} \;
-  find . -name 'dump.rdb' -exec rm {} \;
+  find . -type f -name '*~' -exec rm {} \;
+  find . -type f -name '*.orig' -exec rm {} \;
+  find . -type f -name 'dump.rdb' -exec rm {} \;
 }
 
 alias stopupdates='sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean FALSE'
