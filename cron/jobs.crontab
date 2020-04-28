@@ -1,0 +1,2 @@
+0 8,9,10,11,13,14,15,16 * * 1,2,3,4,5 /usr/local/sbin/block-distracting-hosts.sh
+50 8,9,10,11,13,14,15,16 * * 1,2,3,4,5 /usr/local/sbin/allow-distracting-hosts.sh

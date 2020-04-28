@@ -1,0 +1,30 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+
+# Stop the temptation
+127.0.0.1 puzzle-nonograms.com
+127.0.0.1 puzzle-tapa.com
+127.0.0.1 puzzle-aquarium.com
+127.0.0.1 puzzle-masyu.com
+# 127.0.0.1 mail.google.com
+127.0.0.1 youtube.com
+# 127.0.0.1 servus.ca
+# 127.0.0.1 invest.ameritrade.com
+# 127.0.0.1 rbc.com
+
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
+#
+
+# Test GA locally
+# 127.0.0.1 free-the-heel.fenix.com
+# 127.0.0.1 analyticsjs.fenix.com

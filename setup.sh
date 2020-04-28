@@ -13,3 +13,7 @@ ln -s ~/dotfiles/sshc ~/.ssh/config
 # Run this command to make start executable:
 # chmod +x /usr/local/bin/start
 ln -s ~/dotfiles/start.rb /usr/local/bin/start
+
+# stop distractions periodically with cron
+mkdir ~/.cron
+cp ~/dotfiles/cron/hosts.* ~/.cron
