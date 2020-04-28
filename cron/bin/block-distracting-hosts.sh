@@ -12,5 +12,6 @@ if [ ! -f "/Users/nathan/.cron/hosts.blocks-distractions" ]; then
 fi
 
 cp "/Users/nathan/.cron/hosts.blocks-distractions" /etc/hosts
+killall -HUP mDNSResponder
 
 exit 0
