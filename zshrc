@@ -45,6 +45,9 @@ export PATH=/usr/local/sbin:$PATH
 #   export PATH="/usr/local/opt/ruby/bin:$PATH"
 # fi
 
+### Go
+export PATH=$PATH:$HOME/go/bin
+
 ### ALIASES
 if [ -f ~/dotfiles/aliases ]; then
   source ~/dotfiles/aliases

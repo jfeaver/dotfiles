@@ -2,8 +2,6 @@
 # Usage: start project PROJECT_NAME
 # Summary: Start up a project in tmux
 
-require 'pry'
-
 # Provide `start` completions
 if ARGV.first == '--complete'
   puts 'fenix'
@@ -143,7 +141,6 @@ else
     Tmux.attach(ARGV.first)
   else
     puts "ERROR: Unknown project, directory, or session - '#{ARGV.first}'"
-    binding.pry if binding.respond_to?(:pry)
     exit 1
   end
 end
