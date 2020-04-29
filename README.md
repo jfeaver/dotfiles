@@ -67,4 +67,4 @@ git@github.com:jfeaver/dotfiles.git ~/`
 4. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
 5. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
 6. Run `chmod +x /usr/local/bin/start`
-7. Stop distractions with cron: `cp ~/dotfiles/cron/bin/*.sh /usr/local/sbin` then edit crontab and add the jobs in `dotfiles/cron/jobs`: `sudo crontab -e`
+7. Stop distractions with cron: `ln -s ~/dotfiles/cron/bin/*.sh /usr/local/sbin/` then edit crontab and add the jobs here (`dotfiles/cron/jobs`) to crontab (via `sudo crontab -e`)

@@ -12,6 +12,7 @@ if [ ! -f "/Users/nathan/.cron/hosts.allows-distractions" ]; then
 fi
 
 cp "/Users/nathan/.cron/hosts.allows-distractions" /etc/hosts
+dscacheutil -flushcache
 killall -HUP mDNSResponder
 
 exit 0
