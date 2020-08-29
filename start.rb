@@ -7,9 +7,7 @@ if ARGV.first == '--complete'
   puts 'fenix'
   puts 'fenix-spec'
   puts 'sentry'
-  puts 'measure'
   puts 'dotfiles'
-  puts 'flourish'
   puts 'website'
   puts 'amy'
   puts 'exercism'
@@ -85,6 +83,16 @@ Tmux = Struct.new(:name, :windows) do
     end
   end
 
+  def self.windows(name:, windows:)
+    Tmux.start_or_attach(name) do |t|
+      windows.each do |window|
+        t.window(window[:name]).
+          send_keys("cd #{window[:dir]}").
+          send_keys('[ -f rc ] && source rc')
+      end
+    end
+  end
+
   def self.attach(name)
     _tmux!('attach', '-t', name)
   end
@@ -111,15 +119,27 @@ Tmux = Struct.new(:name, :windows) do
 end
 
 case ARGV.first
-when 'fenix', 'fenix-spec', 'measure', 'sentry'
+when 'fenix', 'fenix-spec', 'sentry'
   Tmux.work_project(name: ARGV.first)
+when 'awana'
+  sw = '~/personal/awana/streamwood'
+  rb = '~/personal/awana/rabbot'
+  Tmux.windows(
+    name: 'awana',
+    windows: [
+      { name: 'server', dir: sw },
+      { name: 'streamwood', dir: sw },
+      { name: 'streamwood2', dir: sw },
+      { name: 'rabbot', dir: rb }
+    ]
+  )
 when 'dotfiles'
   Tmux.project(
     name: 'dotfiles',
     dir: '~/dotfiles',
     windows: %w(trial work)
   )
-when 'amy', 'flourish'
+when 'amy'
   Tmux.personal_project(name: ARGV.first)
 when 'website'
   Tmux.personal_project(name: 'website', dir: '~/personal/nathanfeaver.com')
