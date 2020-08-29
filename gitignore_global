@@ -29,9 +29,9 @@ Thumbs.db
 ############################
 .byebug_history
 
-# NPM #
-#######
-package-lock.json
+# NPM/Yarn #
+############
+/node_modules
 
 # Elm packages #
 ################
