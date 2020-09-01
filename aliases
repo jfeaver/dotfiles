@@ -11,9 +11,12 @@ alias pgstop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 alias pgstart="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pgps="ps auxw | grep postgres"
 
+### AG
+alias ag='noglob ag'
+
 ### GIT
 
-alias gitundo="git reset --soft HEAD~1; git status"
+alias gitundo="git reset HEAD~; git status"
 function gitsweep {
   git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
 }
