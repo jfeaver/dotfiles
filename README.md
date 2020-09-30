@@ -62,9 +62,9 @@ git@github.com:jfeaver/dotfiles.git ~/`
   - ~/.gemrc
   - ~/.gitignore\_global
   - ~/.ssh/config
+  - ~/.agignore
 
 3. Run `git config --global core.excludesfile ~/.gitignore_global` if you haven't already
 4. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
 5. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
-6. Run `chmod +x /usr/local/bin/start`
-7. Stop distractions with cron: `ln -s ~/dotfiles/cron/bin/*.sh /usr/local/sbin/` then edit crontab and add the jobs here (`dotfiles/cron/jobs`) to crontab (via `sudo crontab -e`)
+6. Stop distractions with cron: `ln -s ~/dotfiles/cron/bin/*.sh /usr/local/sbin/` then edit crontab and add the jobs here (`dotfiles/cron/jobs`) to crontab (via `sudo crontab -e`)
