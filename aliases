@@ -12,7 +12,12 @@ alias pgstart="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.pl
 alias pgps="ps auxw | grep postgres"
 
 ### AG
+
 alias ag='noglob ag'
+
+### FZF
+
+alias vif='vim $(fzf --height 40%)'
 
 ### GIT
 
