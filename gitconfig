@@ -14,3 +14,10 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[include]
+	path = /Users/nathan/.git-together
+[git-together]
+	active = nf+as
+[git-together "user"]
+	name = Nathan Feaver
+	email = nathan.feaver@gmail.com

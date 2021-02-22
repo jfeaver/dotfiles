@@ -30,33 +30,9 @@ function gup {
   eval "$( git push 2>&1 >/dev/null | grep -o 'git push.*$' )"
 }
 
-function gpr {
-  hub pull-request -b develop
-}
+### GIT-TOGETHER
 
-function gas {
-  if [ $2 ]; then
-    ghi assign $1 $2
-  else
-    ghi assign $1 darkhelmet
-  fi
-}
-
-function glr {
-  ghi label $1 "Ready For Review"
-}
-
-function glf {
-  ghi label $1 "Feature"
-}
-
-function glb {
-  ghi label $1 "Bug"
-}
-
-function glw {
-  ghi label $1 "WIP"
-}
+alias gt="git-together"
 
 ### TESTING
 

@@ -43,6 +43,8 @@ Plugin 'tpope/vim-fugitive' " Git integration
 Plugin 'tpope/vim-rhubarb' " View file on GitHub plugin for Fugitive
 Plugin 'Quramy/tsuquyomi' " typescript completions
 Plugin 'vim-utils/vim-ruby-fold' " Ruby code folding
+Plugin 'xolox/vim-lua-ftplugin' " Lua
+Plugin 'xolox/vim-misc' " Lua dependency
 
 " 2 dependencies for vim-snipmate
 " Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -165,6 +167,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
 autocmd BufNewFile,BufRead *.json.jbuilder set ft=ruby
 autocmd BufNewFile,BufRead *.xlsx.axlsx set ft=ruby
+autocmd BufNewFile,BufRead *.lua set ft=lua
 
 set cf  " Enable error files & error jumping.
 set autowrite  " Writes on make/shell commands

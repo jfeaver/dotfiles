@@ -37,6 +37,14 @@ if which rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
 
+### jenv
+if which jenv >/dev/null; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+  export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+  alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
+fi
+
 ### Brew
 export PATH=/usr/local/sbin:$PATH
 
