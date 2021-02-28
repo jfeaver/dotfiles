@@ -60,7 +60,7 @@ function clean_temp {
 function s3_deploy {
   rm~
   nanoc prune --yes
-  s3cmd sync ./output/ s3://www.nathanfeaver.com
+  aws sync ./output/ s3://v3.nathanfeaver.com
 }
 
 function rm~ {
