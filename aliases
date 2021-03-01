@@ -22,6 +22,7 @@ alias vif='vim $(fzf --height 40%)'
 ### GIT
 
 alias gitundo="git reset HEAD~; git status"
+alias gitaddu="echo -e \"a\n*\nq\n\"|git add -i" # add untracked through interactive mode
 function gitsweep {
   git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
 }
