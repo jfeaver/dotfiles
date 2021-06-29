@@ -39,6 +39,50 @@ Tmux = Struct.new(:name, :windows) do
       self
     end
 
+    def send_prefix
+      tmux._tmux('send-prefix')
+    end
+
+    def set_up(options)
+      cd(options[:dir])
+      source_rc
+      # FIXME: All the splits are happening in the primary window (#1) rather than in the intended window.
+      # if options.has_key?(:vsp)
+      #   vsp
+      #   set_up_pane(options[:vsp])
+      #   send_keys('tmux select-pane -L')
+      # end
+      # if options.has_key?(:sp)
+      #   sp
+      #   set_up_pane(options[:sp])
+      #   send_keys('tmux select-pane -U')
+      # end
+    end
+
+    def set_up_pane(options)
+      if options.is_a?(Hash)
+        set_up(options)
+      else
+        source_rc
+      end
+    end
+
+    def cd(dir)
+      send_keys("cd #{dir}")
+    end
+
+    def source_rc
+      send_keys('[ -f rc ] && source rc')
+    end
+
+    def vsp
+      send_keys('tmux split-window -h')
+    end
+
+    def sp
+      send_keys('tmux split-window -v')
+    end
+
   private
 
     def index
@@ -85,10 +129,9 @@ Tmux = Struct.new(:name, :windows) do
 
   def self.windows(name:, windows:)
     Tmux.start_or_attach(name) do |t|
-      windows.each do |window|
-        t.window(window[:name]).
-          send_keys("cd #{window[:dir]}").
-          send_keys('[ -f rc ] && source rc')
+      windows.each do |options|
+        window = t.window(options[:name]).
+          set_up(options)
       end
     end
   end
@@ -119,7 +162,16 @@ Tmux = Struct.new(:name, :windows) do
 end
 
 case ARGV.first
-when 'fenix', 'fenix-spec', 'sentry'
+when 'fenix'
+  Tmux.windows(
+    name: 'fenix',
+    windows: [
+      { name: 'server', dir: '~/proj/fenix', vsp: { dir: 'proj/venom', sp: true }, sp: true },
+      { name: 'fx', dir: '~/proj/fenix', sp: true },
+      { name: 'vnm', dir: '~/proj/venom' }
+    ]
+  )
+when 'sentry'
   Tmux.work_project(name: ARGV.first)
 when 'awana'
   sw = '~/personal/awana/streamwood'
