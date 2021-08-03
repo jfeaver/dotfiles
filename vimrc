@@ -190,6 +190,7 @@ set expandtab
 set relativenumber
 
 autocmd Filetype elm setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype lua setlocal ts=4 sw=4 sts=0 expandtab
 
 "" Visual
 set showmatch   " Show matching brackets.
