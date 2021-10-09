@@ -122,15 +122,14 @@ case ARGV.first
 when 'fenix', 'fenix-spec', 'sentry'
   Tmux.work_project(name: ARGV.first)
 when 'awana'
-  sw = '~/personal/awana/streamwood'
-  rb = '~/personal/awana/rabbot'
+  api = '~/personal/pequenos/pequenos-graphql'
+  app = '~/personal/pequenos/pequenos-app'
   Tmux.windows(
     name: 'awana',
     windows: [
-      { name: 'server', dir: sw },
-      { name: 'streamwood', dir: sw },
-      { name: 'streamwood2', dir: sw },
-      { name: 'rabbot', dir: rb }
+      { name: 'server', dir: api },
+      { name: 'gql', dir: api },
+      { name: 'app', dir: app }
     ]
   )
 when 'dotfiles'
