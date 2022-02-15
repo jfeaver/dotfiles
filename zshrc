@@ -1,5 +1,5 @@
 via() {
-  ag -l "$1" | xargs vi
+  ag -l "$1" | xargs -o vi
 }
 
 ### OH-MY-ZSHRC
@@ -14,6 +14,9 @@ fi
 if [ -d "$HOME/Library/Python/2.7/bin" ]; then
   export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 fi
+
+### Node (alternate version at work being used)
+export PATH="/usr/local/opt/node@16/bin:$PATH"
 
 ### NPM
 # Add npm packages to the path
