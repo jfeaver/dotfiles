@@ -33,10 +33,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax highlighting
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'ElmCast/elm-vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'rust-lang/rust.vim'
 
 " Other
 Plugin 'tpope/vim-fugitive' " Git integration
@@ -173,6 +174,7 @@ set cf  " Enable error files & error jumping.
 set autowrite  " Writes on make/shell commands
 set nu!  " Line numbers on
 set nowrap  " Line wrapping off
+autocmd BufNewFile,BufRead *.md set wrap linebreak
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set t_Co=256
 
@@ -203,7 +205,7 @@ set laststatus=2  " Always show status line.
 hi Search cterm=NONE ctermfg=grey ctermbg=blue
 
 " Remove trailing whitespace on save
-autocmd BufWritePre *.* :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Newlines without entering insert mode
 nnoremap <S-Enter> O<Esc>
