@@ -90,8 +90,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 
-if [ -d ~/bin ]; then
-  export PATH=~/bin:$PATH
+if [ -d ~/.local/bin ]; then
+  export PATH=~/.local/bin:$PATH
 fi
 
 ### Brew
@@ -126,3 +126,6 @@ setopt AUTO_CD
 if [ -x "$(command -v rbenv)" ]; then
   eval "$(rbenv init - zsh)"
 fi
+
+### direnv
+eval "$(direnv hook zsh)"
