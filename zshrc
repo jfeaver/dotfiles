@@ -10,6 +10,10 @@ if [ -e ~/.omzshrc ]; then
 fi
 
 ### Consider Removing ###
+### Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # ### Powerline
 # # Make sure powerline is found
 # if [ -d "$HOME/Library/Python/2.7/bin" ]; then
@@ -90,17 +94,15 @@ if [ -d ~/bin ]; then
   export PATH=~/bin:$PATH
 fi
 
-### rbenv
-if which rbenv >/dev/null; then
-  eval "$(rbenv init - zsh)"
-fi
-
 ### Brew
 if [[ $(uname -m) == 'arm64' ]]; then
   export PATH=/opt/homebrew/bin:$PATH
 else
   export PATH=/usr/local/sbin:$PATH
 fi
+
+### CMake (Compiling Aseprite)
+export PATH=$PATH:/Applications/CMake.app/Contents/bin
 
 ### ALIASES
 if [ -f ~/dotfiles/aliases ]; then
@@ -119,3 +121,8 @@ bindkey '^N' history-search-forward
 
 # Auto change directory (don't need to type `cd`)
 setopt AUTO_CD
+
+### rbenv
+if [ -x "$(command -v rbenv)" ]; then
+  eval "$(rbenv init - zsh)"
+fi

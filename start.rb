@@ -53,10 +53,24 @@ Tmux = Struct.new(:name, :windows) do
   end
 
   def self.start_or_attach(name, &block)
+    name = name.to_s
     if has_session?(name)
       attach(name)
     else
       start(name, &block)
+    end
+  end
+
+  def self.default_work_project
+    Tmux.start_or_attach(:work) do |t|
+      windows = []
+      windows << t.window('server').
+        send_keys('cd ~/proj/meetingmap-frontend')
+      windows << t.window('frontend').
+        send_keys('cd ~/proj/meetingmap-frontend')
+      windows << t.window('api').
+        send_keys('cd ~/proj/meetingmap-api')
+      windows.each {|w| w.send_keys('[ -f rc ] && source rc') }
     end
   end
 
@@ -119,8 +133,10 @@ Tmux = Struct.new(:name, :windows) do
 end
 
 case ARGV.first
-when 'fenix', 'fenix-spec', 'sentry'
-  Tmux.work_project(name: ARGV.first)
+when 'work'
+  Tmux.default_work_project
+when 'kg'
+  Tmux.work_project(name: 'kg-api')
 when 'awana'
   api = '~/personal/pequenos/pequenos-graphql'
   app = '~/personal/pequenos/pequenos-app'
