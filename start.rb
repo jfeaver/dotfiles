@@ -70,7 +70,9 @@ Tmux = Struct.new(:name, :windows) do
         send_keys('cd ~/proj/meetingmap-frontend')
       windows << t.window('api').
         send_keys('cd ~/proj/meetingmap-api')
-      windows.each {|w| w.send_keys('[ -f rc ] && source rc') }
+      windows << t.window('kg').
+        send_keys('cd ~/proj/kg-api')
+      windows.each {|w| w.send_keys('[ -f rc.nathan ] && source rc.nathan') }
     end
   end
 

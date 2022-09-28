@@ -47,5 +47,6 @@ tags
 ####################
 .*.nathan.*
 *.nathan.*
+*.nathan
 routes.txt
 scripts/
