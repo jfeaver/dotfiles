@@ -23,3 +23,5 @@
 	email = nathan.feaver@gmail.com
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true

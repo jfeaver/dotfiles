@@ -31,9 +31,48 @@ function gup {
   eval "$( git push 2>&1 >/dev/null | grep -o 'git push.*$' )"
 }
 
+gitupdate() {
+  bold=$(tput bold)
+  normal=$(tput sgr0)
+  message="stashed for gitupdate"
+
+  # git stash
+  echo "${bold}Stashing any changes with a message \"stashed for gitupdate\".${normal}"
+  git stash push -m "stashed for gitupdate"
+
+  # git pull
+  echo "${bold}Pulling latest just to make sure.${normal}"
+  git pull
+
+  # git checkout master
+  # git pull
+  echo "${bold}Switching to master branch and pulling latest.${normal}"
+  git checkout master
+  git pull
+
+  # git checkout -
+  # git merge master
+  echo "${bold}Switching back to your feature branch and attempting to merge the latest.${normal}"
+  git checkout -
+  git merge master
+
+  if [ $? -eq 0 ]; then
+    # FIXME: Needs to only pop the stash if stashing was successful earlier
+    # git stash apply
+    # echo "${bold}Attempting to apply stashed changes.${normal}"
+    # git stash pop
+    echo "${bold}STASHED CHANGES MAY STILL BE STASHED!${normal}"
+  fi
+}
+
 ### GIT-TOGETHER
 
 alias gt="git-together"
+
+### SOPS (Secrets manager)
+
+alias sopsenc="echo 'Preparing secrets file for deployment' && sops -encrypt secrets.yaml > secrets.sops.yaml"
+alias sopsdec="echo 'Generating human readable secrets file' && sops -decrypt secrets.sops.yaml > secrets.yaml"
 
 ### TESTING
 
@@ -42,6 +81,8 @@ alias rpr='rspec $(git diff --name-only develop spec/**/*_spec.rb)'
 alias my_cop="rubocop -D -c .rubocop.nathan.yml"
 
 ### MISC
+
+alias rand64="openssl rand -hex 32"
 
 alias ctags="`brew --prefix`/bin/ctags"
 

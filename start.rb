@@ -4,13 +4,12 @@
 
 # Provide `start` completions
 if ARGV.first == '--complete'
-  puts 'fenix'
-  puts 'fenix-spec'
-  puts 'sentry'
+  puts 'work'
   puts 'dotfiles'
+  puts 'exercism'
+  puts 'awana'
   puts 'website'
   puts 'amy'
-  puts 'exercism'
   puts '* (personal/fun_project)'
   exit
 end
@@ -68,10 +67,10 @@ Tmux = Struct.new(:name, :windows) do
         send_keys('cd ~/proj/meetingmap-frontend')
       windows << t.window('frontend').
         send_keys('cd ~/proj/meetingmap-frontend')
-      windows << t.window('api').
-        send_keys('cd ~/proj/meetingmap-api')
-      windows << t.window('kg').
-        send_keys('cd ~/proj/kg-api')
+      windows << t.window('supabase').
+        send_keys('cd ~/proj/meetingmap-supabase')
+      windows << t.window('live').
+        send_keys('cd ~/proj/amplifi-live')
       windows.each {|w| w.send_keys('[ -f rc.nathan ] && source rc.nathan') }
     end
   end
@@ -137,8 +136,6 @@ end
 case ARGV.first
 when 'work'
   Tmux.default_work_project
-when 'kg'
-  Tmux.work_project(name: 'kg-api')
 when 'awana'
   api = '~/personal/pequenos/pequenos-graphql'
   app = '~/personal/pequenos/pequenos-app'

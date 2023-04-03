@@ -50,3 +50,4 @@ tags
 *.nathan
 routes.txt
 scripts/
+.vscode/

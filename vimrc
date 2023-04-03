@@ -29,13 +29,12 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'user/L9', {'name': 'newL9'}
 
 " Fuzzy File Finder
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntax highlighting
 Plugin 'elixir-lang/vim-elixir'
 " Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
-Plugin 'ElmCast/elm-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'rust-lang/rust.vim'
 
@@ -46,6 +45,7 @@ Plugin 'Quramy/tsuquyomi' " typescript completions
 Plugin 'vim-utils/vim-ruby-fold' " Ruby code folding
 Plugin 'xolox/vim-lua-ftplugin' " Lua
 Plugin 'xolox/vim-misc' " Lua dependency
+Plugin 'neoclide/coc.nvim'
 
 " 2 dependencies for vim-snipmate
 " Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -233,4 +233,4 @@ if executable('ag')
 endif
 
 " elm-vim
-let g:elm_format_autosave = 1 " auto format on save
+" let g:elm_format_autosave = 1 " auto format on save

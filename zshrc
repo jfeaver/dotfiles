@@ -129,3 +129,8 @@ fi
 
 ### direnv
 eval "$(direnv hook zsh)"
+
+### asdf
+if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
+  source /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
