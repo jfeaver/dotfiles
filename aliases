@@ -24,7 +24,7 @@ alias vif='vim $(fzf --height 40%)'
 alias gitundo="git reset HEAD~; git status"
 alias gitaddu="echo -e \"a\n*\nq\n\"|git add -i" # add untracked through interactive mode
 function gitsweep {
-  git branch --merged | grep -E -v "\*|master|develop" | xargs -n 1 git branch -d
+  git branch --merged | grep -E -v "\*|master|develop|dev|production" | xargs -n 1 git branch -d
 }
 
 function gup {
@@ -44,17 +44,18 @@ gitupdate() {
   echo "${bold}Pulling latest just to make sure.${normal}"
   git pull
 
+  base_branch="${GIT_BASE_BRANCH:-master}"
   # git checkout master
   # git pull
-  echo "${bold}Switching to master branch and pulling latest.${normal}"
-  git checkout master
+  echo "${bold}Switching to $base_branch branch and pulling latest.${normal}"
+  git checkout "$base_branch"
   git pull
 
   # git checkout -
   # git merge master
   echo "${bold}Switching back to your feature branch and attempting to merge the latest.${normal}"
   git checkout -
-  git merge master
+  git merge "$base_branch"
 
   if [ $? -eq 0 ]; then
     # FIXME: Needs to only pop the stash if stashing was successful earlier
