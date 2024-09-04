@@ -28,6 +28,10 @@ Thumbs.db
 ############################
 .byebug_history
 
+# Python #
+##########
+.venv
+
 # NPM/Yarn #
 ############
 /node_modules
@@ -49,5 +53,9 @@ tags
 *.nathan.*
 *.nathan
 routes.txt
-scripts/
 .vscode/
+public/videos
+public/documents
+
+# For supabase project
+.tool-versions

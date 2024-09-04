@@ -89,9 +89,9 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 function fileserver {
   if [ $1 ]; then
-    python -mSimpleHTTPServer $1
+    python3 -m http.server $1
   else
-    python -mSimpleHTTPServer 3000
+    python3 -m http.server 3000
   fi
 }
 
