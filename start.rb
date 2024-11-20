@@ -64,17 +64,17 @@ Tmux = Struct.new(:name, :windows) do
     Tmux.start_or_attach(:work) do |t|
       windows = []
       windows << t.window('server').
-        send_keys('cd ~/proj/meetingmap-frontend')
+        send_keys('cd ~/proj/iclerk/frontend')
       windows << t.window('frontend').
-        send_keys('cd ~/proj/meetingmap-frontend')
+        send_keys('cd ~/proj/iclerk/frontend')
       windows << t.window('supabase').
-        send_keys('cd ~/proj/meetingmap-supabase')
+        send_keys('cd ~/proj/iclerk/supabase-db')
       windows << t.window('pipeline').
-        send_keys('cd ~/proj/meetingmap-pipeline')
+        send_keys('cd ~/proj/iclerk/pipeline')
       windows << t.window('infra').
-        send_keys('cd ~/proj/meetingmap-infra')
+        send_keys('cd ~/proj/iclerk/infra')
       windows << t.window('public-api').
-        send_keys('cd ~/proj/public-api')
+        send_keys('cd ~/proj/iclerk/public-api')
       windows.each {|w| w.send_keys('[ -f rc.nathan ] && source rc.nathan') }
     end
   end
