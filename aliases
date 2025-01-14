@@ -85,7 +85,12 @@ alias my_cop="rubocop -D -c .rubocop.nathan.yml"
 
 alias rand64="openssl rand -hex 32"
 
-alias ctags="`brew --prefix`/bin/ctags"
+# ctags ??? Not sure what this is doing for me
+if command -v brew &> /dev/null; then
+  alias ctags="`brew --prefix`/bin/ctags"
+else
+  # Not implemented
+fi
 
 function fileserver {
   if [ $1 ]; then

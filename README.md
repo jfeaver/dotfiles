@@ -10,10 +10,14 @@ Setup
 1. Clone this repository into your home directory: `git clone
 git@github.com:jfeaver/dotfiles.git ~/`
 
-1. Install Oh-My-Zsh because it will create some config files and overwrite the symlinks
+2. Install ZSH, Node
+
+3. Install Vim (make sure you install the non-"Tiny version without GUI"), Vundle
+
+4. Install Oh-My-Zsh because it will create some config files and overwrite the symlinks
 that we'll create in the next couple of steps (zshrc for me).
 
-2. Move or remove existing config files (if they exist):
+5. Move or remove existing config files (if they exist):
   - ~/.atom/config.cson
   - ~/.zshrc
   - ~/.omzshrc
@@ -25,10 +29,9 @@ that we'll create in the next couple of steps (zshrc for me).
   - ~/.ssh/config
   - ~/.agignore
 
-3. Run `git config --global core.excludesfile ~/.gitignore_global` if you haven't already
-4. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
-5. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
-6. Make `start` a proper executable: `chmod +x ~/bin/start`
+6. Run `./setup.sh` (Creates symbolic links from the home directory to the dotfiles directory)
+
+7. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
 
 Software
 ========
