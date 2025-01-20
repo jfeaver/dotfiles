@@ -25,3 +25,5 @@
 	defaultBranch = master
 [pull]
 	rebase = true
+[help]
+	autocorrect = prompt

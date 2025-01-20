@@ -1,0 +1,2 @@
+Include ~/.ssh/config.d/common
+Include ~/.ssh/config.d/$(uname | tr '[:upper:]' '[:lower:]')
