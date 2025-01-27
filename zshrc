@@ -53,6 +53,7 @@ if command -v direnv &> /dev/null; then
 fi
 
 ### asdf
-if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
-  source /opt/homebrew/opt/asdf/libexec/asdf.sh
-fi
+# Loading via omzshrc plugin
+# if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
+#   source /opt/homebrew/opt/asdf/libexec/asdf.sh
+# fi
