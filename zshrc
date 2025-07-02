@@ -52,8 +52,21 @@ if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+### conda
+conda() {
+  # Remove this function so that we don't get here next time.
+  unset -f conda
+  # Evaluate the hook in the current shell so that its definitions become global.
+  eval "$(/home/nathan/pkg/miniconda3/bin/conda shell.zsh hook)"
+  # Now that the real 'conda' is defined, call it with any arguments.
+  conda "$@"
+}
+
 ### asdf
 # Loading via omzshrc plugin
 # if [ -e /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
 #   source /opt/homebrew/opt/asdf/libexec/asdf.sh
 # fi
+
+. $HOME/.asdf/asdf.sh
+
