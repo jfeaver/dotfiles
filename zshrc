@@ -68,5 +68,5 @@ conda() {
 #   source /opt/homebrew/opt/asdf/libexec/asdf.sh
 # fi
 
-. $HOME/.asdf/asdf.sh
 
+. "$HOME/snap/code/198/.local/share/../bin/env"
