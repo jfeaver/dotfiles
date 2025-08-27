@@ -8,7 +8,7 @@ Setup
 =====
 
 1. Clone this repository into your home directory: `git clone
-git@github.com:jfeaver/dotfiles.git ~/`
+git@github.com:jfeaver/dotfiles.git ~/dotfiles`
 
 2. Install ZSH, Node
 
