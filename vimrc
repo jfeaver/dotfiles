@@ -33,7 +33,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Syntax highlighting
 Plugin 'elixir-lang/vim-elixir'
-" Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'rust-lang/rust.vim'
@@ -42,10 +41,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-fugitive' " Git integration
 Plugin 'tpope/vim-rhubarb' " View file on GitHub plugin for Fugitive
 Plugin 'Quramy/tsuquyomi' " typescript completions
-Plugin 'vim-utils/vim-ruby-fold' " Ruby code folding
 Plugin 'xolox/vim-lua-ftplugin' " Lua
 Plugin 'xolox/vim-misc' " Lua dependency
-Plugin 'neoclide/coc.nvim'
 
 " 2 dependencies for vim-snipmate
 " Plugin 'MarcWeber/vim-addon-mw-utils'

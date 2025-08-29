@@ -47,6 +47,13 @@ if [ -x "$(command -v rbenv)" ]; then
   eval "$(rbenv init - zsh)"
 fi
 
+### nvm
+if [ -f ~/.nvm/nvm.sh ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
 ### direnv
 if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
@@ -71,6 +78,7 @@ conda() {
 # Maybe I need this for VS Code?
 # . "$HOME/snap/code/198/.local/share/../bin/env"
 
+### xcape
 if command -v xcape &> /dev/null; then
   xcape -e 'Caps_Lock=Escape'
 fi
