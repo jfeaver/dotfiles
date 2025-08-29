@@ -68,5 +68,9 @@ conda() {
 #   source /opt/homebrew/opt/asdf/libexec/asdf.sh
 # fi
 
+# Maybe I need this for VS Code?
+# . "$HOME/snap/code/198/.local/share/../bin/env"
 
-. "$HOME/snap/code/198/.local/share/../bin/env"
+if command -v xcape &> /dev/null; then
+  xcape -e 'Caps_Lock=Escape'
+fi

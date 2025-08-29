@@ -12,7 +12,7 @@ git@github.com:jfeaver/dotfiles.git ~/dotfiles`
 
 2. Install ZSH, Node
 
-3. Install Vim (make sure you install the non-"Tiny version without GUI"), Vundle
+3. Install Vim (make sure you install the non-"Tiny version without GUI" such as vim-gtk3), Vundle
 
 4. Install Oh-My-Zsh because it will create some config files and overwrite the symlinks
 that we'll create in the next couple of steps (zshrc for me).
@@ -25,6 +25,7 @@ that we'll create in the next couple of steps (zshrc for me).
   - ~/.tmux.conf
   - ~/.rvmrc
   - ~/.gemrc
+  - ~/.gitconfig
   - ~/.gitignore\_global
   - ~/.ssh/config
   - ~/.agignore
@@ -48,7 +49,7 @@ to copy/paste inside tmux sessions in OSX).
 ### Caps and R-ctrl key remapping
 
 Mac: Change Keyboard Modifier Keys, install [Karabiner](https://pqrs.org/osx/karabiner/) and change left control settings (after granting Karabiner accessibility options in Security preferences)
-Linux: [xcape](https://github.com/alols/xcape)
+Linux: [xcape](https://github.com/alols/xcape)(see zshrc config) and GNOME Tweaks (sudo apt install gnome-tweaks): Keyboard -> Additional Layout Options -> Caps Lock behavior -> Make Caps Lock an additional Ctrl
 
 Open ~/.config/karabiner/karabiner.json and add/replace with these rules:
                 rules: [
