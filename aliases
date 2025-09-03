@@ -113,3 +113,6 @@ function rm~ {
 
 alias stopupdates='sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean FALSE'
 alias startupdates='sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -boolean TRUE'
+
+alias iclerk="$HOME/proj/infra/iclerk.bash"
+alias kubectl='microk8s kubectl'
