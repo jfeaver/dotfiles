@@ -46,6 +46,8 @@ and run the command to install Vundle plugins: :PluginInstall
 tmux might need reattach-to-user-namespace which can be installed via Homebrew (it allows us
 to copy/paste inside tmux sessions in OSX).
 
+To enable copy/paste in tmux, install the [tmux plugin manager](https://github.com/tmux-plugins/tpm) and then use the `prefix-I` command to install plugins.
+
 ### Caps and R-ctrl key remapping
 
 Mac: Change Keyboard Modifier Keys, install [Karabiner](https://pqrs.org/osx/karabiner/) and change left control settings (after granting Karabiner accessibility options in Security preferences)
