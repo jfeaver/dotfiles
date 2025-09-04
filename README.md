@@ -10,11 +10,17 @@ Setup
 1. Clone this repository into your home directory: `git clone
 git@github.com:jfeaver/dotfiles.git ~/dotfiles`
 
-2. Install ZSH, Node
+2. (Mac) Install
+  - Homebrew
+    - Then use brew to install zsh, vim (vim-gtk3 if there are options - see the next step), git, tmux
+  - Node (using nvm or [instructions on the website](https://nodejs.org/en/download))
 
-3. Install Vim (make sure you install the non-"Tiny version without GUI" such as vim-gtk3), Vundle
+2. (Ubuntu) Install ZSH, Node
 
-4. Install Oh-My-Zsh because it will create some config files and overwrite the symlinks
+3. Install Vim (make sure you install the non-"Tiny version without GUI" such as vim-gtk3), [Vundle](https://github.com/VundleVim/Vundle.vim?tab=readme-ov-file#quick-start)
+and run the command to install Vundle plugins: :PluginInstall
+
+4. Install [Oh-My-Zsh](https://ohmyz.sh/#install) because it will create some config files and overwrite the symlinks
 that we'll create in the next couple of steps (zshrc for me).
 
 5. Move or remove existing config files (if they exist):
@@ -34,19 +40,16 @@ that we'll create in the next couple of steps (zshrc for me).
 
 7. Change the zshrc theme to your own in `~/dotfiles/omzshrc`
 
+8. Install
+  - The [tmux plugin manager](https://github.com/tmux-plugins/tpm) and then use the `prefix-I` command to install plugins (for copy/paste in tmux).
+  - [ag](https://github.com/ggreer/the_silver_searcher) for searching files.
+  - One of the keyboard mapping tools (see `Caps and R-ctrl key remapping`)
+
 Software
 ========
 
-First, install Homebrew using the instructions from their homepage.
-
-Use brew to install: zsh, vim, git, tmux
-Install Vundle: https://github.com/VundleVim/Vundle.vim#quick-start
-and run the command to install Vundle plugins: :PluginInstall
-
 tmux might need reattach-to-user-namespace which can be installed via Homebrew (it allows us
 to copy/paste inside tmux sessions in OSX).
-
-To enable copy/paste in tmux, install the [tmux plugin manager](https://github.com/tmux-plugins/tpm) and then use the `prefix-I` command to install plugins.
 
 ### Caps and R-ctrl key remapping
 
